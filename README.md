@@ -5,6 +5,10 @@ This Rust library offers a useful future which allows you to time exactly how lo
 Usage couldn't be simpler:
 
 ```rs
+async fn sleep() {
+    tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+}
+
 // debug log our `sleep()` future with a custom log message
 // will only print debug log if `debug_assertions` are enabled
 //
