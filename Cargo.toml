@@ -2,6 +2,35 @@
 name = "async-instrumenter"
 version = "0.1.0"
 edition = "2021"
+license = "GPL-3.0+"
+readme = "README.md"
+repository = "https://github.com/MolotovCherry/async-instrumenter"
+description = "A instrument wrapper which allows one to time how long your future takes to execute"
+categories = ["asynchronous", "development tools"]
+keywords = [
+    "instrument",
+    "instrumenting",
+    "instrumenter",
+    "async",
+    "await",
+    "asynchronous",
+    "time",
+    "timer",
+    "profiler",
+    "profiling",
+    "execution",
+    "monitor",
+    "monitoring",
+    "debug",
+    "debugging",
+    "performance",
+    "trace",
+    "tracing",
+    "measurement",
+    "benchmark",
+    "diagnostics",
+    "analysis",
+]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
