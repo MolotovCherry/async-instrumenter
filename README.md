@@ -2,6 +2,8 @@
 
 This Rust library offers a useful future which allows you to time exactly how long any particular future took to execute.
 
+Please note that this is only as accurate as Rust's `Instant` type. So while it offers a good benchmark of how long, it is limited to how precise std/os/hardware is measuring the time. (If you know of a more accurate implementation, I am all ears)
+
 Usage couldn't be simpler:
 
 ```rs
