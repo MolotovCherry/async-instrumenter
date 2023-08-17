@@ -6,7 +6,7 @@ Please note that this is only as accurate as Rust's `Instant` type. So while it 
 
 Usage couldn't be simpler:
 
-```rs
+```rust
 async fn sleep() {
     tokio::time::sleep(std::time::Duration::from_secs(1)).await;
 }
