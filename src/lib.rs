@@ -55,15 +55,11 @@ impl<F: Future> Future for InstrumentFuture<F> {
             *this.timer = Some(Instant::now());
         }
 
-        match this.future.poll(cx) {
-            Poll::Ready(r) => Poll::Ready(InstrumentFutureResult {
-                result: r,
-                // SAFETY: `timer` is always `Some(T)` since we set timer to Some up above when it's None
-                elapsed: unsafe { this.timer.unwrap_unchecked() }.elapsed(),
-            }),
-
-            Poll::Pending => Poll::Pending,
-        }
+        this.future.poll(cx).map(|r| InstrumentFutureResult {
+            result: r,
+            // SAFETY: `timer` is always `Some(T)` since we ensure it's always set to Some above
+            elapsed: unsafe { this.timer.unwrap_unchecked() }.elapsed(),
+        })
     }
 }
 
