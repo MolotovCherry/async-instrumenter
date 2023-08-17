@@ -34,7 +34,7 @@ instrument!("{elapsed:?}", sleep()).await;
 instrument!(sleep()).await;
 
 // we can also manually create an instrumenting future if
-//we require custom behavior or access to the elapsed data
+// we require custom behavior or access to the elapsed data
 let res = InstrumentFuture::new(sleep()).await;
 println!("took {:?} with result {:?}", res.elapsed, res.result);
 ```
