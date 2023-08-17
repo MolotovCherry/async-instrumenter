@@ -5,7 +5,7 @@ edition = "2021"
 license = "GPL-3.0+"
 readme = "README.md"
 repository = "https://github.com/MolotovCherry/async-instrumenter"
-description = "A instrument wrapper which allows one to time how long your future takes to execute"
+description = "A wrapper over futures which allows to time how long the future takes to execute"
 categories = [
     "asynchronous",
     "development-tools::profiling",
