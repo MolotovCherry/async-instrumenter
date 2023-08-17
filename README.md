@@ -19,19 +19,22 @@ async fn sleep() {
 // elapsed arg must be used
 dbg_instrument!("sleep() took {elapsed:?}", sleep()).await;
 
-// same as above, except with a predefined macro provided log message
+// same as above, except with a predefined macro provided log
+// message
 dbg_instrument!(sleep()).await;
 
-// will always print a debug log message regardless of `debug_assertions` status
+// will always print a debug log message regardless of
+// `debug_assertions` status
 //
 // elapsed arg must be used
 instrument!("{elapsed:?}", sleep()).await;
 
-// same as above, except with a predefined macro provided log message
+// same as above, except with a predefined macro provided
+// log message
 instrument!(sleep()).await;
 
-// we can also manually create an instrumenting future if we require custom behavior
-// or access to the elapsed data
+// we can also manually create an instrumenting future if
+//we require custom behavior or access to the elapsed data
 let res = InstrumentFuture::new(sleep()).await;
 println!("took {:?} with result {:?}", res.elapsed, res.result);
 ```
