@@ -18,7 +18,7 @@ pub struct InstrumentFutureResult<R> {
 
 /// Wraps a future and determines exactly how long it took to execute
 ///
-/// ```rs
+/// ```rust
 /// let my_fut: impl Future<Output = ()> = foobar();
 /// let res = InstrumentFuture::new(my_fut).await;
 ///
@@ -82,12 +82,12 @@ impl<F: Future> Future for InstrumentFuture<F> {
 ///
 /// Examples:
 ///
-/// ```rs
+/// ```rust
 /// let my_fut: impl Future<Output = ()> = foobar();
-/// dbg_instrument(my_fut).await;
+/// dbg_instrument!(my_fut).await;
 ///
 /// let f = 0;
-/// dbg_instrument("custom_log_message {f}: {elapsed:?}").await;
+/// dbg_instrument!("custom_log_message {f}: {elapsed:?}").await;
 /// ```
 #[macro_export]
 macro_rules! dbg_instrument {
@@ -126,12 +126,12 @@ macro_rules! dbg_instrument {
 ///
 /// Examples:
 ///
-/// ```rs
+/// ```rust
 /// let my_fut: impl Future<Output = ()> = foobar();
-/// instrument(my_fut).await;
+/// instrument!(my_fut).await;
 ///
 /// let f = 0;
-/// instrument("custom_log_message {f}: {elapsed:?}").await;
+/// instrument!("custom_log_message {f}: {elapsed:?}").await;
 /// ```
 #[macro_export]
 macro_rules! instrument {
