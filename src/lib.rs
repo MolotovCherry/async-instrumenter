@@ -83,7 +83,7 @@ impl<F: Future> Future for InstrumentFuture<F> {
 /// dbg_instrument!(my_fut).await;
 ///
 /// let f = 0;
-/// dbg_instrument!("custom_log_message {f}: {elapsed:?}").await;
+/// dbg_instrument!("custom_log_message {f}: {elapsed:?}", my_fut).await;
 /// ```
 #[macro_export]
 macro_rules! dbg_instrument {
@@ -127,7 +127,7 @@ macro_rules! dbg_instrument {
 /// instrument!(my_fut).await;
 ///
 /// let f = 0;
-/// instrument!("custom_log_message {f}: {elapsed:?}").await;
+/// instrument!("custom_log_message {f}: {elapsed:?}", my_fut).await;
 /// ```
 #[macro_export]
 macro_rules! instrument {
